@@ -43,8 +43,8 @@ public class Configs {
             try (InputStreamReader ignored = new InputStreamReader(new FileInputStream(whitelistFile.toFile()), StandardCharsets.UTF_8)) {
                 // https://stackoverflow.com/a/11661528
                 Scanner scan = new Scanner(whitelistFile);
-                while(scan.hasNext())
-                {
+                whitelist.clear();
+                while(scan.hasNext()) {
                     whitelist.add(scan.next());
                 }
             } catch (Exception e) {
