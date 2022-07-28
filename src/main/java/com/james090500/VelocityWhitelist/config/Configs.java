@@ -41,7 +41,6 @@ public class Configs {
         //Load whitelist players to memory (if any)
         if(whitelistFile.toFile().exists()) {
             try (InputStreamReader ignored = new InputStreamReader(new FileInputStream(whitelistFile.toFile()), StandardCharsets.UTF_8)) {
-                // https://stackoverflow.com/a/11661528
                 Scanner scan = new Scanner(whitelistFile);
                 whitelist.clear();
                 while(scan.hasNext()) {
@@ -71,7 +70,6 @@ public class Configs {
      */
     public static void saveWhitelist(VelocityWhitelist velocityWhitelist) {
         try {
-            // https://stackoverflow.com/a/11661528
             PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(String.valueOf(whitelistFile))));
             for (String s : whitelist) {
                 out.println(s);

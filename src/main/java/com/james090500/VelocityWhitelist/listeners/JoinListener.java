@@ -16,7 +16,6 @@ import java.util.concurrent.CompletableFuture;
 
 public class JoinListener {
     private VelocityWhitelist velocityWhitelist;
-
     @Subscribe(order = PostOrder.EARLY)
     public void onPlayerJoin(LoginEvent event) {
         Player player = event.getPlayer();
